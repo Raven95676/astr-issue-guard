@@ -1,0 +1,29 @@
+{
+  "name": "astr-issue-guard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered GitHub App that automatically moderates Issues.",
+  "author": "Raven95676",
+  "license": "ISC",
+  "homepage": "https://github.com/Raven95676/astr-issue-guard",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "start": "probot run ./index.js"
+  },
+  "dependencies": {
+    "openai": "^6.8.1",
+    "probot": "^13.0.1"
+  },
+  "devDependencies": {
+    "nock": "^14.0.0-beta.5",
+    "smee-client": "^2.0.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "type": "module"
+}
