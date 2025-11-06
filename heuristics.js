@@ -33,7 +33,7 @@ const DAY_IN_MS = 1000 * 60 * 60 * 24;
  * 基于启发式规则评估 issue 是否需要进一步审核。
  * @param {import('probot').Context} context Probot 上下文
  * @param {object} issue Issue payload
- * @returns {Promise<{shouldRun: boolean, signals: string[], metrics: object}>}
+ * @returns {Promise<{signals: string[], metrics: object}>}
  */
 export async function runIssueHeuristics(context, issue) {
   const config = heuristicConfig;
@@ -138,7 +138,6 @@ export async function runIssueHeuristics(context, issue) {
   }
 
   return {
-    shouldRun: signals.length > 0,
     signals,
     metrics: {
       urlCount,

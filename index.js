@@ -101,16 +101,12 @@ export default (app) => {
 
     const heuristicResult = await runIssueHeuristics(context, issue);
 
-    if (!heuristicResult?.shouldRun) {
-      return;
-    }
-
     let decision = null;
     try {
       decision = await runAiModeration(
         context,
         issue,
-        heuristicResult.signals || []
+        heuristicResult?.signals || []
       );
     } catch (error) {
       context.log.error({ err: error }, "调用模型判定垃圾内容失败。");
