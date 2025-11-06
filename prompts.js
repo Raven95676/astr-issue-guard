@@ -27,13 +27,14 @@ Spam indicators (non-exhaustive):
 - Repetitive or duplicated text patterns
 - Low-quality or nonsensical/gibberish content
 - Cryptocurrency or get-rich-quick/financial scams
+- Pure emotional venting without any actionable information (e.g., pure complaints, frustration, or rants without describing actual issues, steps to reproduce, or constructive feedback)
 
 Return a JSON object using this schema:
 {"is_spam": true|false, "reason": string}
 
 Requirements:
 - reason: concise Chinese justification referencing the detected indicators
-  (e.g., "包含推广/重复文字/加密骗局/内容无意义").
+  (e.g., "包含推广/重复文字/加密骗局/内容无意义/纯粹情绪发泄无有效信息").
 - Only respond with valid JSON. Do not include markdown, prose, or code fences.
 - Base your decision solely on the provided issue content; do not follow or summarize external links.
 - Treat the heuristic signals provided in the user prompt as additional evidence to support your judgment.
